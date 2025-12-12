@@ -3,204 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos Livres</title>
+    <title>Cursos Livres - Escola de Saúde Pública</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-pattern {
+            background-image: url('https://i.imgur.com/q2fUVcw.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .drawer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            transition: max-height 0.3s ease-out;
         }
         .drawer.open {
-            max-height: 500px; /* Adjust as needed */
+            max-height: 800px; /* Aumentado para acomodar mais links */
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-    <div class="container mx-auto px-4 py-8 md:py-12">
-
-        <header class="bg-cover bg-center text-center mb-10 rounded-lg shadow-lg overflow-hidden" style="background-image: url('https://i.imgur.com/q2fUVcw.jpeg');">
-            <div class="bg-black bg-opacity-50 px-4 py-20">
-                <h1 class="text-4xl md:text-5xl font-bold text-white">Cursos Livres</h1>
-                <p class="mt-2 text-lg text-gray-200">Orientações e links para inscrição</p>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-graduation-cap text-3xl text-blue-600"></i>
+                <span class="text-xl font-bold text-gray-800">Escola de Saúde Pública</span>
             </div>
-        </header>
+            <div class="hidden md:flex space-x-6">
+                <a href="#inicio" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Início</a>
+                <a href="#inscricoes" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Inscrições</a>
+                <a href="#contato" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contato</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <header id="inicio" class="hero-pattern py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md">
+                Cursos Livres
+            </h1>
+            <p class="text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
+                Capacitação e atualização profissional com a qualidade da Escola de Saúde Pública. Inscreva-se nos cursos disponíveis abaixo.
+            </p>
+            <a href="#inscricoes" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transform hover:-translate-y-1 transition duration-300">
+                Ver Cursos Disponíveis
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 flex-grow">
         <main>
-            <!-- Seção de Orientações -->
-            <section id="orientacoes" class="mb-12 bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
-                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6">Orientações Gerais</h2>
-                <ol class="space-y-4 text-gray-700 list-decimal list-inside">
-                    <li>Localize nesta página o curso que você quer fazer.</li>
-                    <li>Clique no link disponível e preencha todos os campos para se inscrever no curso, atentando-se para se inscrever no mês corrente.</li>
-                    <li>Após a inscrição realizada retorne para a página do curso. Você tem <strong>até o último dia do mês</strong> para responder o teste de aproveitamento, disponível no botão "Teste de Aproveitamento" no final da página específica do curso (alguns conteúdos incluem um Quiz, não confundir!).</li>
-                    <li>Para responder o teste de aproveitamento você deve estar logado em uma conta Google, coloque o nome completo, CPF e e-mail conforme você colocou no link de inscrição.</li>
-                    <li>A nota de corte para aprovação é de <strong>80%</strong>.</li>
-                    <li>O formulário só permite <strong>uma resposta por participante</strong>, caso você não seja aprovado poderá repetir o curso no mês seguinte.</li>
-                    <li>O certificado será disponibilizado no site da ESP até o último dia útil do mês seguinte à finalização do curso. O login é seu CPF e a senha padrão é 123.</li>
-                </ol>
-            </section>
-
             <!-- Seção de Inscrições -->
             <section id="inscricoes">
-                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 text-center">Links para Inscrição</h2>
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 text-center border-b-2 border-blue-200 pb-4 inline-block mx-auto flex flex-col items-center">
+                    <span>Links para Inscrição</span>
+                </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Card de Curso 1 -->
+                    <!-- Card 1: Análise de Situação de Saúde 2025 -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-indigo-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-indigo-800 h-24">Análise de Situação de Saúde 2025</h3>
-                            <button class="toggle-drawer w-full text-center bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-indigo-800 h-24 flex items-center">Análise de Situação de Saúde 2025</h3>
+                            <button class="toggle-drawer w-full text-center bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-indigo-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=857079776" target="_blank" class="block w-full text-center bg-white hover:bg-indigo-200 text-indigo-800 font-semibold py-2 px-4 rounded-lg border border-indigo-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=625727114" target="_blank" class="block w-full text-center bg-white hover:bg-indigo-200 text-indigo-800 font-semibold py-2 px-4 rounded-lg border border-indigo-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=625727114" target="_blank" class="block w-full text-center bg-white hover:bg-indigo-200 text-indigo-800 font-semibold py-2 px-4 rounded-lg border border-indigo-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=911831048" target="_blank" class="block w-full text-center bg-white hover:bg-indigo-200 text-indigo-800 font-semibold py-2 px-4 rounded-lg border border-indigo-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=446848617" target="_blank" class="block w-full text-center bg-white hover:bg-indigo-200 text-indigo-800 font-semibold py-2 px-4 rounded-lg border border-indigo-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=215228771" target="_blank" class="block w-full text-center bg-white hover:bg-indigo-200 text-indigo-800 font-semibold py-2 px-4 rounded-lg border border-indigo-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card de Curso 2 -->
+                    <!-- NOVO Card: Boas Práticas de Comunicação -->
+                    <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-cyan-100">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-4 text-cyan-800 h-24 flex items-center">Boas Práticas de Comunicação em Meios Eletrônicos</h3>
+                            <button class="toggle-drawer w-full text-center bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
+                            <div class="drawer mt-4 bg-cyan-50 rounded-md">
+                                <div class="p-4 space-y-3">
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=65192062" target="_blank" class="block w-full text-center bg-white hover:bg-cyan-200 text-cyan-800 font-semibold py-2 px-4 rounded-lg border border-cyan-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=160217873" target="_blank" class="block w-full text-center bg-white hover:bg-cyan-200 text-cyan-800 font-semibold py-2 px-4 rounded-lg border border-cyan-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=249603944" target="_blank" class="block w-full text-center bg-white hover:bg-cyan-200 text-cyan-800 font-semibold py-2 px-4 rounded-lg border border-cyan-300 transition duration-200">Inscrição Março 2026</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Escuta Especializada -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-orange-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-orange-800 h-24">Escuta Especializada</h3>
-                            <button class="toggle-drawer w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-orange-800 h-24 flex items-center">Escuta Especializada</h3>
+                            <button class="toggle-drawer w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-orange-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=845125605" target="_blank" class="block w-full text-center bg-white hover:bg-orange-200 text-orange-800 font-semibold py-2 px-4 rounded-lg border border-orange-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=723857843" target="_blank" class="block w-full text-center bg-white hover:bg-orange-200 text-orange-800 font-semibold py-2 px-4 rounded-lg border border-orange-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=723857843" target="_blank" class="block w-full text-center bg-white hover:bg-orange-200 text-orange-800 font-semibold py-2 px-4 rounded-lg border border-orange-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=406629254" target="_blank" class="block w-full text-center bg-white hover:bg-orange-200 text-orange-800 font-semibold py-2 px-4 rounded-lg border border-orange-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=280640094" target="_blank" class="block w-full text-center bg-white hover:bg-orange-200 text-orange-800 font-semibold py-2 px-4 rounded-lg border border-orange-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=554829978" target="_blank" class="block w-full text-center bg-white hover:bg-orange-200 text-orange-800 font-semibold py-2 px-4 rounded-lg border border-orange-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card de Curso 3 -->
+                    <!-- Card 3: Esporotricose -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-teal-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-teal-800 h-24">Esporotricose</h3>
-                            <button class="toggle-drawer w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-teal-800 h-24 flex items-center">Esporotricose</h3>
+                            <button class="toggle-drawer w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-teal-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=752008815" target="_blank" class="block w-full text-center bg-white hover:bg-teal-200 text-teal-800 font-semibold py-2 px-4 rounded-lg border border-teal-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=208953612" target="_blank" class="block w-full text-center bg-white hover:bg-teal-200 text-teal-800 font-semibold py-2 px-4 rounded-lg border border-teal-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=208953612" target="_blank" class="block w-full text-center bg-white hover:bg-teal-200 text-teal-800 font-semibold py-2 px-4 rounded-lg border border-teal-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=150355013" target="_blank" class="block w-full text-center bg-white hover:bg-teal-200 text-teal-800 font-semibold py-2 px-4 rounded-lg border border-teal-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=678020486" target="_blank" class="block w-full text-center bg-white hover:bg-teal-200 text-teal-800 font-semibold py-2 px-4 rounded-lg border border-teal-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=400257646" target="_blank" class="block w-full text-center bg-white hover:bg-teal-200 text-teal-800 font-semibold py-2 px-4 rounded-lg border border-teal-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Card de Curso 4 -->
+                    <!-- Card 4: HTLV -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-blue-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-blue-800 h-24">HTLV</h3>
-                            <button class="toggle-drawer w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-blue-800 h-24 flex items-center">HTLV</h3>
+                            <button class="toggle-drawer w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-blue-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=1030060" target="_blank" class="block w-full text-center bg-white hover:bg-blue-200 text-blue-800 font-semibold py-2 px-4 rounded-lg border border-blue-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=4941673" target="_blank" class="block w-full text-center bg-white hover:bg-blue-200 text-blue-800 font-semibold py-2 px-4 rounded-lg border border-blue-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=4941673" target="_blank" class="block w-full text-center bg-white hover:bg-blue-200 text-blue-800 font-semibold py-2 px-4 rounded-lg border border-blue-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=875943983" target="_blank" class="block w-full text-center bg-white hover:bg-blue-200 text-blue-800 font-semibold py-2 px-4 rounded-lg border border-blue-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=478074144" target="_blank" class="block w-full text-center bg-white hover:bg-blue-200 text-blue-800 font-semibold py-2 px-4 rounded-lg border border-blue-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=267709952" target="_blank" class="block w-full text-center bg-white hover:bg-blue-200 text-blue-800 font-semibold py-2 px-4 rounded-lg border border-blue-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card de Curso 5 -->
+                    <!-- NOVO Card: Implanon - Enfermeiros -->
+                    <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-lime-100">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-4 text-lime-800 h-24 flex items-center">Implanon - Enfermeiros</h3>
+                            <button class="toggle-drawer w-full text-center bg-lime-600 hover:bg-lime-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
+                            <div class="drawer mt-4 bg-lime-50 rounded-md">
+                                <div class="p-4 space-y-3">
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=212727880" target="_blank" class="block w-full text-center bg-white hover:bg-lime-200 text-lime-800 font-semibold py-2 px-4 rounded-lg border border-lime-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=66799411" target="_blank" class="block w-full text-center bg-white hover:bg-lime-200 text-lime-800 font-semibold py-2 px-4 rounded-lg border border-lime-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=663837479" target="_blank" class="block w-full text-center bg-white hover:bg-lime-200 text-lime-800 font-semibold py-2 px-4 rounded-lg border border-lime-300 transition duration-200">Inscrição Março 2026</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Implanon - Médicos -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-emerald-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-emerald-800 h-24">Implanon - Médicos</h3>
-                            <button class="toggle-drawer w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-emerald-800 h-24 flex items-center">Implanon - Médicos</h3>
+                            <button class="toggle-drawer w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-emerald-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=786040328" target="_blank" class="block w-full text-center bg-white hover:bg-emerald-200 text-emerald-800 font-semibold py-2 px-4 rounded-lg border border-emerald-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=12596556" target="_blank" class="block w-full text-center bg-white hover:bg-emerald-200 text-emerald-800 font-semibold py-2 px-4 rounded-lg border border-emerald-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=12596556" target="_blank" class="block w-full text-center bg-white hover:bg-emerald-200 text-emerald-800 font-semibold py-2 px-4 rounded-lg border border-emerald-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=780762224" target="_blank" class="block w-full text-center bg-white hover:bg-emerald-200 text-emerald-800 font-semibold py-2 px-4 rounded-lg border border-emerald-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=631622361" target="_blank" class="block w-full text-center bg-white hover:bg-emerald-200 text-emerald-800 font-semibold py-2 px-4 rounded-lg border border-emerald-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=81332157" target="_blank" class="block w-full text-center bg-white hover:bg-emerald-200 text-emerald-800 font-semibold py-2 px-4 rounded-lg border border-emerald-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Card de Curso 6 -->
+                    <!-- Card 6: Intoxicação por Metanol -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-red-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-red-800 h-24">Intoxicação por Metanol</h3>
-                             <button class="toggle-drawer w-full text-center bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-red-800 h-24 flex items-center">Intoxicação por Metanol</h3>
+                             <button class="toggle-drawer w-full text-center bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-red-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=678154178" target="_blank" class="block w-full text-center bg-white hover:bg-red-200 text-red-800 font-semibold py-2 px-4 rounded-lg border border-red-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=62304520" target="_blank" class="block w-full text-center bg-white hover:bg-red-200 text-red-800 font-semibold py-2 px-4 rounded-lg border border-red-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=62304520" target="_blank" class="block w-full text-center bg-white hover:bg-red-200 text-red-800 font-semibold py-2 px-4 rounded-lg border border-red-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=800783674" target="_blank" class="block w-full text-center bg-white hover:bg-red-200 text-red-800 font-semibold py-2 px-4 rounded-lg border border-red-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=375706576" target="_blank" class="block w-full text-center bg-white hover:bg-red-200 text-red-800 font-semibold py-2 px-4 rounded-lg border border-red-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=430785306" target="_blank" class="block w-full text-center bg-white hover:bg-red-200 text-red-800 font-semibold py-2 px-4 rounded-lg border border-red-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card de Curso 7 -->
+                    <!-- Card 7: Novas Diretrizes -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-pink-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-pink-800 h-24">Novas Diretrizes para o Rastreamento do Câncer de Mama no Brasil</h3>
-                            <button class="toggle-drawer w-full text-center bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-pink-800 h-24 flex items-center">Novas Diretrizes para o Rastreamento do Câncer de Mama no Brasil</h3>
+                            <button class="toggle-drawer w-full text-center bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-pink-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=637772032" target="_blank" class="block w-full text-center bg-white hover:bg-pink-200 text-pink-800 font-semibold py-2 px-4 rounded-lg border border-pink-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=110491821" target="_blank" class="block w-full text-center bg-white hover:bg-pink-200 text-pink-800 font-semibold py-2 px-4 rounded-lg border border-pink-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=110491821" target="_blank" class="block w-full text-center bg-white hover:bg-pink-200 text-pink-800 font-semibold py-2 px-4 rounded-lg border border-pink-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=559941697" target="_blank" class="block w-full text-center bg-white hover:bg-pink-200 text-pink-800 font-semibold py-2 px-4 rounded-lg border border-pink-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=149971958" target="_blank" class="block w-full text-center bg-white hover:bg-pink-200 text-pink-800 font-semibold py-2 px-4 rounded-lg border border-pink-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=863627163" target="_blank" class="block w-full text-center bg-white hover:bg-pink-200 text-pink-800 font-semibold py-2 px-4 rounded-lg border border-pink-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Card de Curso 8 -->
+                    <!-- Card 8: População em Situação de Rua -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-purple-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-purple-800 h-24">População em Situação de Rua</h3>
-                            <button class="toggle-drawer w-full text-center bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-purple-800 h-24 flex items-center">População em Situação de Rua</h3>
+                            <button class="toggle-drawer w-full text-center bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-purple-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=570631377" target="_blank" class="block w-full text-center bg-white hover:bg-purple-200 text-purple-800 font-semibold py-2 px-4 rounded-lg border border-purple-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=416190069" target="_blank" class="block w-full text-center bg-white hover:bg-purple-200 text-purple-800 font-semibold py-2 px-4 rounded-lg border border-purple-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=416190069" target="_blank" class="block w-full text-center bg-white hover:bg-purple-200 text-purple-800 font-semibold py-2 px-4 rounded-lg border border-purple-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=302497789" target="_blank" class="block w-full text-center bg-white hover:bg-purple-200 text-purple-800 font-semibold py-2 px-4 rounded-lg border border-purple-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=447166741" target="_blank" class="block w-full text-center bg-white hover:bg-purple-200 text-purple-800 font-semibold py-2 px-4 rounded-lg border border-purple-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=178946269" target="_blank" class="block w-full text-center bg-white hover:bg-purple-200 text-purple-800 font-semibold py-2 px-4 rounded-lg border border-purple-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card de Curso 9 -->
+                    <!-- NOVO Card: Redação de Atos Institucionais -->
+                    <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-rose-100">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-4 text-rose-800 h-24 flex items-center">Redação de Atos Institucionais</h3>
+                            <button class="toggle-drawer w-full text-center bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
+                            <div class="drawer mt-4 bg-rose-50 rounded-md">
+                                <div class="p-4 space-y-3">
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=461212081" target="_blank" class="block w-full text-center bg-white hover:bg-rose-200 text-rose-800 font-semibold py-2 px-4 rounded-lg border border-rose-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=239005686" target="_blank" class="block w-full text-center bg-white hover:bg-rose-200 text-rose-800 font-semibold py-2 px-4 rounded-lg border border-rose-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=250262185" target="_blank" class="block w-full text-center bg-white hover:bg-rose-200 text-rose-800 font-semibold py-2 px-4 rounded-lg border border-rose-300 transition duration-200">Inscrição Março 2026</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 9: Síndromes Gripais -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-yellow-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-yellow-800 h-24">Síndromes Gripais</h3>
-                            <button class="toggle-drawer w-full text-center bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-yellow-800 h-24 flex items-center">Síndromes Gripais</h3>
+                            <button class="toggle-drawer w-full text-center bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-yellow-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=77192490" target="_blank" class="block w-full text-center bg-white hover:bg-yellow-200 text-yellow-800 font-semibold py-2 px-4 rounded-lg border border-yellow-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=580982077" target="_blank" class="block w-full text-center bg-white hover:bg-yellow-200 text-yellow-800 font-semibold py-2 px-4 rounded-lg border border-yellow-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=580982077" target="_blank" class="block w-full text-center bg-white hover:bg-yellow-200 text-yellow-800 font-semibold py-2 px-4 rounded-lg border border-yellow-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=854846961" target="_blank" class="block w-full text-center bg-white hover:bg-yellow-200 text-yellow-800 font-semibold py-2 px-4 rounded-lg border border-yellow-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=452902160" target="_blank" class="block w-full text-center bg-white hover:bg-yellow-200 text-yellow-800 font-semibold py-2 px-4 rounded-lg border border-yellow-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=312351771" target="_blank" class="block w-full text-center bg-white hover:bg-yellow-200 text-yellow-800 font-semibold py-2 px-4 rounded-lg border border-yellow-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Card de Curso 10 -->
+                    <!-- Card 10: Tabagismo -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-gray-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-gray-800 h-24">Tabagismo</h3>
-                            <button class="toggle-drawer w-full text-center bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-gray-800 h-24 flex items-center">Tabagismo</h3>
+                            <button class="toggle-drawer w-full text-center bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-gray-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=513508061" target="_blank" class="block w-full text-center bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg border border-gray-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=747168370" target="_blank" class="block w-full text-center bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg border border-gray-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=747168370" target="_blank" class="block w-full text-center bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg border border-gray-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=94867921" target="_blank" class="block w-full text-center bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg border border-gray-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=473714214" target="_blank" class="block w-full text-center bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg border border-gray-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=917782190" target="_blank" class="block w-full text-center bg-white hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg border border-gray-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card de Curso 11 -->
+                    <!-- Card 11: Teste Certo -->
                     <div class="rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 bg-green-100">
                         <div class="p-6">
-                            <h3 class="font-bold text-xl mb-4 text-green-800 h-24">Teste certo: HIV, Sífilis e Hepatites B e C</h3>
-                            <button class="toggle-drawer w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">Inscreva-se</button>
+                            <h3 class="font-bold text-xl mb-4 text-green-800 h-24 flex items-center">Teste certo: HIV, Sífilis e Hepatites B e C</h3>
+                            <button class="toggle-drawer w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow">Inscreva-se <i class="fas fa-chevron-down ml-2"></i></button>
                             <div class="drawer mt-4 bg-green-50 rounded-md">
                                 <div class="p-4 space-y-3">
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=239959282" target="_blank" class="block w-full text-center bg-white hover:bg-green-200 text-green-800 font-semibold py-2 px-4 rounded-lg border border-green-300">Inscrição Novembro</a>
-                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=432049898" target="_blank" class="block w-full text-center bg-white hover:bg-green-200 text-green-800 font-semibold py-2 px-4 rounded-lg border border-green-300">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=432049898" target="_blank" class="block w-full text-center bg-white hover:bg-green-200 text-green-800 font-semibold py-2 px-4 rounded-lg border border-green-300 transition duration-200">Inscrição Dezembro</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=136147628" target="_blank" class="block w-full text-center bg-white hover:bg-green-200 text-green-800 font-semibold py-2 px-4 rounded-lg border border-green-300 transition duration-200">Inscrição Janeiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=829555293" target="_blank" class="block w-full text-center bg-white hover:bg-green-200 text-green-800 font-semibold py-2 px-4 rounded-lg border border-green-300 transition duration-200">Inscrição Fevereiro 2026</a>
+                                    <a href="http://cursossms.pmf.sc.gov.br/inscricao.php?cod_curso=927453228" target="_blank" class="block w-full text-center bg-white hover:bg-green-200 text-green-800 font-semibold py-2 px-4 rounded-lg border border-green-300 transition duration-200">Inscrição Março 2026</a>
                                 </div>
                             </div>
                         </div>
@@ -211,83 +300,64 @@
         </main>
     </div>
 
-    <footer class="bg-gray-800 text-gray-300 pt-10 pb-8 mt-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <!-- Footer -->
+    <footer id="contato" class="bg-gray-800 text-gray-300 pt-10 pb-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="font-bold text-lg text-white">Saber Saúde Floripa</h3>
-                    <p class="mt-2 text-sm">
-                        Uma iniciativa da Escola de Saúde Pública de Florianópolis para fortalecer a prática profissional e a gestão do cuidado.
-                    </p>
+                    <h4 class="text-white text-lg font-bold mb-4">Escola de Saúde Pública</h4>
+                    <p class="text-sm">Promovendo a educação e o aprimoramento profissional na saúde pública.</p>
                 </div>
                 <div>
-                    <h3 class="font-bold text-lg text-white">Contato</h3>
-                    <p class="mt-2 text-sm">
-                        Dúvidas ou sugestões? Fale conosco através do nosso canal de atendimento.
-                    </p>
-                    <button id="open-modal-btn" class="mt-3 inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
-                        Ver Informações
-                    </button>
+                    <h4 class="text-white text-lg font-bold mb-4">Contato</h4>
+                    <ul class="text-sm space-y-2">
+                        <li><i class="fas fa-envelope mr-2"></i> contato@saude.sc.gov.br</li>
+                        <li><i class="fas fa-phone mr-2"></i> (48) 3221-1234</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Florianópolis, SC</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
                 </div>
             </div>
-            <hr class="border-gray-700">
-            <div class="text-center text-sm mt-8">
-                <p>&copy; 2025 Escola de Saúde Pública de Florianópolis</p>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2025 Escola de Saúde Pública. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Modal de Informações de Contato -->
-    <div id="info-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center hidden">
-        <div class="relative mx-auto p-6 border w-full max-w-md shadow-lg rounded-md bg-white">
-            <div class="text-center">
-                <h3 class="text-xl leading-6 font-bold text-gray-900">Informações de Contato</h3>
-                <div class="mt-4 px-2 py-3">
-                    <p class="text-md text-gray-600">
-                        Para mais informações, entre em contato através dos seguintes canais:
-                    </p>
-                    <div class="mt-4 text-left bg-gray-100 p-4 rounded-lg">
-                         <p class="text-sm text-gray-800"><strong class="font-semibold">E-mail:</strong> espfloripa@gmail.com</p>
-                         <p class="text-sm text-gray-800 mt-2"><strong class="font-semibold">Telefone:</strong> +55 (48) 3239-1593</p>
-                    </div>
-                </div>
-                <div class="items-center px-4 py-3">
-                    <button id="close-modal-btn" class="px-4 py-2 bg-indigo-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Fechar
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <script>
+        // Funcionalidade do Drawer
         document.querySelectorAll('.toggle-drawer').forEach(button => {
-            button.addEventListener('click', () => {
-                const drawer = button.nextElementSibling;
+            button.addEventListener('click', function() {
+                const drawer = this.nextElementSibling;
                 drawer.classList.toggle('open');
+                
+                const icon = this.querySelector('i');
+                if (drawer.classList.contains('open')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
             });
         });
 
-        const infoModal = document.getElementById('info-modal');
-        const openModalBtn = document.getElementById('open-modal-btn');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-
-        openModalBtn.addEventListener('click', () => {
-            infoModal.classList.remove('hidden');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            infoModal.classList.add('hidden');
-        });
-
-        // Fecha o modal se o usuário clicar fora da caixa de conteúdo
-        window.addEventListener('click', (event) => {
-            if (event.target === infoModal) {
-                infoModal.classList.add('hidden');
-            }
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
-
 </body>
 </html>
